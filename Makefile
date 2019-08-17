@@ -5,7 +5,7 @@ CC				= gcc
 CFLAGS			= -Wall -Werror -Wextra
 FLAGS			= $(CFLAGS)
 
-PUSH_SWAP_FILES	= push_swap.c
+PUSH_SWAP_FILES	= push_swap.c stack_operations.c
 CHECKER_FILES	= checker.c
 ALL_FILES		= $(PUSH_SWAP_FILES) $(CHECKER_FILES)
 
@@ -16,11 +16,11 @@ all: program1 program2
 
 program1: $(PUSH_SWAP_OBJ)
 	@echo "Creating: $(PROGRAM_1)"
-	@$(CC) $(FLAGS) -I push_swap_includes $(PUSH_SWAP_OBJ) -o $(PROGRAM_1)
+	@$(CC) $(FLAGS) -I includes $(PUSH_SWAP_OBJ) -o $(PROGRAM_1)
 
 program2: $(CHECKER_OBJ)
 	@echo "Creating: $(PROGRAM_2)"
-	@$(CC) $(FLAGS) -I checker_includes $(CHECKER_OBJ) -o $(PROGRAM_2)
+	@$(CC) $(FLAGS) -I includes $(CHECKER_OBJ) -o $(PROGRAM_2)
 
 push_swap_build:
 	@echo "  Creating build directory"
